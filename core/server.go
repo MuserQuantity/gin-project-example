@@ -32,9 +32,7 @@ func RunWindowsServer() {
 	address := fmt.Sprintf(":%d", global.SYS_CONFIG.System.Addr)
 	s := initServer(address, Router)
 	// 保证文本顺序输出
-	// In order to ensure that the text order output can be deleted
 	time.Sleep(10 * time.Microsecond)
 	global.SYS_LOG.Info("server run success on ", zap.String("address", address))
-	fmt.Println("正在运行")
 	global.SYS_LOG.Error(s.ListenAndServe().Error())
 }

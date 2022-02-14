@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/MuserQuantity/gin-project-example/core"
 	"github.com/MuserQuantity/gin-project-example/global"
 	"github.com/MuserQuantity/gin-project-example/initialize"
@@ -20,7 +19,7 @@ import (
 // @name x-token
 // @BasePath /
 func main() {
-	global.SYS_VP = core.Viper()      // 初始化Viper
+	global.SYS_VP = core.Viper()      // 初始化viper(配置文件)
 	global.SYS_LOG = core.Zap()       // 初始化zap日志库
 	global.SYS_DB = initialize.Gorm() // gorm连接数据库
 	initialize.Timer()
@@ -32,5 +31,4 @@ func main() {
 		defer db.Close()
 	}
 	core.RunWindowsServer()
-	fmt.Println("正在运行")
 }

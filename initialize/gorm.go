@@ -10,7 +10,7 @@ import (
 	"gorm.io/gorm"
 )
 
-// Gorm 初始化数据库并产生数据库全局变量
+// Gorm 初始化数据库并产生数据库全局变量，全局皆可调用
 // Author SliverHorn
 func Gorm() *gorm.DB {
 	switch global.SYS_CONFIG.System.DbType {
@@ -23,7 +23,7 @@ func Gorm() *gorm.DB {
 	}
 }
 
-// RegisterTables 注册数据库表专用
+// RegisterTables 注册数据库表专用，自动监测数据库表情况
 // Author SliverHorn
 func RegisterTables(db *gorm.DB) {
 	err := db.AutoMigrate(

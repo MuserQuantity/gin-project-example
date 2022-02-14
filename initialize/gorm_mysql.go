@@ -31,7 +31,7 @@ func GormMysql() *gorm.DB {
 	}
 }
 
-// GormMysqlByConfig 初始化Mysql数据库用过传入配置
+// GormMysqlByConfig 初始化Mysql数据库，使用已设置的配置参数
 func GormMysqlByConfig(m config.DB) *gorm.DB {
 	if m.Dbname == "" {
 		return nil

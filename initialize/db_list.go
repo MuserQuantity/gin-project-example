@@ -7,6 +7,7 @@ import (
 
 const sys = "system"
 
+// DBList 用于读取解析多数据库信息，列表方式存储
 func DBList() {
 	dbMap := make(map[string]*gorm.DB)
 	for _, info := range global.SYS_CONFIG.DBList {
